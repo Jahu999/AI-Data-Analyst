@@ -1,0 +1,38 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Raw datasets
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated data
+data/processed/*
+!data/processed/.gitkeep
+
+# Generated reports
+reports/charts/*
+!reports/charts/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
