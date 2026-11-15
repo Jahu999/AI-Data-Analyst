@@ -13,7 +13,11 @@ def load_data() -> pd.DataFrame:
             f"Data file not found at {DATA_PATH}"
         )
 
-    return pd.read_csv(DATA_PATH, encoding="cp1252")
+    return pd.read_csv(
+    DATA_PATH,
+    encoding="cp1252",
+    dtype={"Postal Code": "string"}
+)
 
 
 if __name__ == "__main__":
@@ -30,7 +34,7 @@ if __name__ == "__main__":
     print(data.describe().to_string())
 
     print("\nLiczba duplikatów:")
-    print(data.duplicated())
+    print(data.duplicated().sum())
 
     print("\nLiczba brakujących wartości:")
     print(data.isnull().sum())
