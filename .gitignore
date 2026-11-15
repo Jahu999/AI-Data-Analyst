@@ -20,6 +20,7 @@ data/raw/*
 
 # Generated data
 data/processed/*
+!data/processed/superstore_clean.csv
 !data/processed/.gitkeep
 
 # Generated reports

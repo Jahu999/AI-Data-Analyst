@@ -4,6 +4,7 @@ import pandas as pd
 DATA_PATH = Path("data/raw/Sample - Superstore.csv")
 
 
+#Załadowanie danych z pliku CSV
 def load_data() -> pd.DataFrame:
     """
     Loads the Superstore dataset from a CSV file.
@@ -12,7 +13,9 @@ def load_data() -> pd.DataFrame:
         raise FileNotFoundError(
             f"Data file not found at {DATA_PATH}"
         )
-
+    
+    
+    #Zmiana kodowania na cp1252, oraz ustawienie typu danych dla kolumny "Postal Code" na string, aby uniknąć problemów z typami danych
     return pd.read_csv(
     DATA_PATH,
     encoding="cp1252",
@@ -20,6 +23,7 @@ def load_data() -> pd.DataFrame:
 )
 
 
+#Przegląd danych po wczytaniu, przed czyszczeniem
 if __name__ == "__main__":
     data = load_data()
 

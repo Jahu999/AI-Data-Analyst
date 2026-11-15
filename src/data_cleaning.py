@@ -7,8 +7,10 @@ DATE_COLUMNS = ["Order Date", "Ship Date"]
 def clean_data(data: pd.DataFrame) -> pd.DataFrame:
     data = data.copy()
 
+
     # Usunięcie spacji z nazw kolumn
     data.columns = [column.strip() for column in data.columns]
+
 
     # Konwersja dat.
     for column in DATE_COLUMNS:
@@ -18,11 +20,13 @@ def clean_data(data: pd.DataFrame) -> pd.DataFrame:
                 format="%m/%d/%Y",
                 errors="coerce")
 
+
     # Kontrola brakujących wartości po konwersji
     if data.isnull().any().any():
         raise ValueError(
         "Wykryto brakujące wartości po czyszczeniu danych!"
     )
+
 
     # Zmiana typu danych w kolumnach liczbowych
     numeric_columns = ["Sales", "Quantity", "Discount", "Profit"]
